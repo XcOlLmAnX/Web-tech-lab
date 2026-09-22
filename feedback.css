@@ -1,7 +1,31 @@
 body {
-    margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 div {
-    margin-bottom: 20px;
+  margin-top: 6px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 17px;
+  color: #fff;
+  background-color: #0357ff;
+  border: none;
+  cursor: pointer;
 }

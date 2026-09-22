@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feedback.css">
     <title>Document</title>
 </head>
 
 <body>
-    <form>
+    <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
         <div>
             <h1>Форма обратной связи</h1>
 
             <div>
                 <label for="name">ФИО:</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
             </div>  
 
             <div>
                 <label for="email">Адрес электронной почты:</label>
-                <input type="email" name="email" id="email" placeholder="Введите почту">
+                <input type="email" name="email" id="email" placeholder="Введите почту" required>
             </div>
 
             <div>
                 <label for="from">Откуда вы узнали о нас?
                     <div>
-                        <input type="radio" name="found" value="friends">
+                        <input type="radio" name="found" value="friends" required>
                         Рассказали друзья
                         <input type="radio" name="found" value="ads">
                         Реклама в интернете
@@ -56,13 +56,15 @@
 
             <div>
                 <label for="info">
-                    <input type="checkbox" name="info" id="info">
+                    <input type="checkbox" name="info" id="info" required>
                     Даю согласие на обработку персональных данных
                 </label>
             </div>
 
-            <button type="submit" class="submit">Отправить</button>
+            <button type="submit" class="submit-btn">Отправить</button>
         </div>
     </form>
+
+    
 </body>
 </html>

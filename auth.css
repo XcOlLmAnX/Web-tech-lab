@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+
+  background-image: url(mountain.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+form {
+  background-color: #d8dee3;
+  padding: 50px;
+  width: 100%;
+  max-width: 650px; 
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input[type="text"], input[type="password"], textarea {
+  width: 100%;
+  padding: 6px;
+  font-size: 15px;
+}
+
+.submit {
+  padding: 14px 20px;
+  margin-top: 20px;
+  font-size: 17px;
+  color: #fff;
+  background-color: #3070ef;
+  border: none;
+  cursor: pointer;
+}
