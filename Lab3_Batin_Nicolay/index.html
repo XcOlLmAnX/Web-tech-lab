@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велошоп</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Амортизационные вилки Fox</h1>
+
+    <div class="catalog">
+
+        <div class="card">
+            <img src="fox_36_perfomance.png" alt="" class="card_img">
+            <p class="card_price">36000₽</p>
+            <h3 class="card_title">Fox 36 Perfomance Elite</h3>
+            <p class="fork_travel">160mm</p>
+            <button class="card_btn">Добавить</button>
+        </div>
+
+        <div class="card">
+            <img src="fox_36_factory.png" alt="" class="card_img">
+            <p class="card_price">49000₽</p>
+            <h3 class="card_title">Fox 36 Factory Kashima</h3>
+            <p class="fork_travel">170mm</p>
+            <button class="card_btn">Добавить</button>
+        </div>
+
+        <div class="card">
+            <img src="fox_36_podium.png" alt="" class="card_img">
+            <p class="card_price">110000₽</p>
+            <h3 class="card_title">Fox 36 Podium Gold</h3>
+            <p class="fork_travel">170mm</p>
+            <button class="card_btn">Добавить</button>
+        </div>
+
+        <div class="card">
+            <img src="fox_40_factory.png" alt="" class="card_img">
+            <p class="card_price">120000₽</p>
+            <h3 class="card_title">Fox 40 Factory Kashima</h3>
+            <p class="fork_travel">200mm</p>
+            <button class="card_btn">Добавить</button>
+        </div>
+
+        <div class="card">
+            <img src="fox_40_podium.png" alt="" class="card_img">
+            <p class="card_price">210000₽</p>
+            <h3 class="card_title">Fox 40 Podium Gold</h3>
+            <p class="fork_travel">200mm</p>
+            <button class="card_btn">Добавить</button>
+        </div>
+
+    </div>
+
+    <h2>Сделать заказ</h2>
+
+    <div class="order_container">
+        <div class="order_col">
+            <h4>Ваш заказ</h4>
+            <label for="fork">Аморт</label>
+            <select name="fork" id="fork">
+                <option value="" disabled selected>Выберите амортизатор</option>
+                <option value="fox_36_perfomance">Fox 36 Perfomance Elite</option>
+                <option value="fox_36_factory">Fox 36 Factory Kashima</option>
+                <option value="fox_36_podium">Fox 36 Podium Gold</option>
+                <option value="fox_40_factory">Fox 40 Factory Kashima</option>
+                <option value="fox_40_podium">Fox 40 Podium Gold</option>
+            </select>
+
+            <label for="comment">Комментарий к заказу</label>
+            <div>
+                <textarea name="comment" id="comment"></textarea>
+            </div>
+        </div>
+
+        <div class="order_col">
+            <div>
+                <h4>Ваши данные</h4>
+                <label for="name">ФИО:</label>
+                <input type="text" name="name" id="name" placeholder="Введите ФИО">
+            </div>
+                
+            <div>
+                <label for="email">Ваш email:</label>
+                <input type="email" name="email" id="email" placeholder="Введите email">
+            </div>
+
+            <div>
+                <label for="sale"> 
+                    <input type="checkbox" name="sale" id="sale"> 
+                    Уведомлять о скидках и акциях       <!-- Приблизить к email надо -->
+                </label>
+            </div>
+
+            <div>
+                <label for="number">Номер телефона</label>
+                <input type="text" name="number" id="number" placeholder="Введите номер телефона">
+            </div>
+
+            <div>
+                <label for="adress">Адрес доставки</label>
+                <input type="text" name="adress" id="adress" placeholder="Введите Адрес">
+                <label>Доставка осуществляется только по Москве</label>
+            </div>
+
+            <div>
+                <label>Время доставки:</label>
+                <input type="radio">
+                Как можно скорее
+                <input type="radio">
+                К указаному времени
+            </div>
+
+            <div>
+                <label for="time">Укажите время доставки</label>
+                <input type="time" name="time" id="time">
+            </div>
+
+            <label>Доступное время доставки с 7:00 до 23:00</label>
+            
+            <div>
+                <button class="other_btn">Сбросить</button>
+                <button class="other_btn">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
