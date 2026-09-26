@@ -6,9 +6,44 @@ body {
     min-height: 100vh;
 }
 
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 40px;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.sidebar_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar_list li {
+    margin-bottom: 12px;
+}
+
+.sidebar_list a {
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+}
+
 .catalog {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -100,4 +135,20 @@ select, input[type="text"], input[type="email"], input[type="time"], textarea {
     font-weight: bold;
 }
 
+@media (max-width: 800px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
 
+    .catalog {
+        flex-wrap: wrap;
+    }
+
+    .order_container {
+        flex-direction: column;
+    }
+
+    .order_col {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+.sidebar, .card_btn, .other_btn, select, input, textarea {
+    display: none;
+}
+
+body {
+    background-color: #fff;
+    padding: 0;
+    color: #000;
+}
+
+.layout {
+    display: block;
+    max-width: 100%;
+}
+
+.catalog {
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    break-inside: avoid;
+}
+
+.card_img {
+    max-width: 150px;
+}
+
+.order_container {
+    flex-direction: column;
+}
