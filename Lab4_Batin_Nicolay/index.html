@@ -3,12 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велошоп</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css" media="print">
 </head>
 
 <body>
-    
+    <div class="layout">
 
+        <aside class="sidebar">
+            <h3>Категории</h3>
+            <ul class="sidebar_list">
+                <li><a href="#fork">Вилки</a></li>
+                <li><a href="#wheels">Колёса</a></li>
+                <li><a href="#brakes">Тормоза</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+    <h1 id="fork">Амортизационные вилки Fox</h1>
+    <div class="catalog" id="fork_catalog"></div>
+
+    <h1 id="wheels">Колёса</h1>
+    <div class="catalog" id="wheels_catalog"></div>
+
+    <h1 id="brakes">Тормоза</h1>
+    <div class="catalog" id="brakes_catalog"></div>
+
+    <h2>Сделать заказ</h2>
+
+    <form class="order_container" id="order_form" action="https://httpbin.org/post" method="POST">
+        <div class="order_col">
+            <h4>Ваш заказ</h4>
+
+            <p id="nothing_selected" class="order_text">Ничего не выбрано</p>
+
+            <div id="order_items" hidden>
+                <div class="order_item">
+                    <b>Вилка</b>
+                    <p id="fork_selected" class="order_text">Товар не выбран</p>
+                </div>
+
+                <div class="order_item">
+                    <b>Колёса</b>
+                    <p id="wheels_selected" class="order_text">Товар не выбран</p>
+                </div>
+
+                <div class="order_item">
+                    <b>Тормоза</b>
+                    <p id="brakes_selected" class="order_text">Товар не выбран</p>
+                </div>
+
+                <div class="order_item">
+                    <b>Стоимость заказа</b>
+                    <p id="order_total" class="order_text">0₽</p>
+                </div>
+            </div>
+
+            <input type="hidden" name="fork" id="fork_input">
+            <input type="hidden" name="wheels" id="wheels_input">
+            <input type="hidden" name="brakes" id="brakes_input">
+
+            <label for="comment">Комментарий к заказу</label>
+            <div>
+                <textarea name="comment" id="comment"></textarea>
+            </div>
+        </div>
+
+        <div class="order_col">
+            <div>
+                <h4>Ваши данные</h4>
+                <label for="name">ФИО:</label>
+                <input type="text" name="name" id="name" placeholder="Введите ФИО">
+            </div>
+
+            <div>
+                <label for="email">Ваш email:</label>
+                <input type="email" name="email" id="email" placeholder="Введите email">
+            </div>
+
+            <div>
+                <label for="sale">
+                    <input type="checkbox" name="sale" id="sale">
+                    Уведомлять о скидках и акциях
+                </label>
+            </div>
+
+            <div>
+                <label for="number">Номер телефона</label>
+                <input type="text" name="number" id="number" placeholder="Введите номер телефона">
+            </div>
+
+            <div>
+                <label for="adress">Адрес доставки</label>
+                <input type="text" name="adress" id="adress" placeholder="Введите Адрес">
+                <label>Доставка осуществляется только по Москве</label>
+            </div>
+
+            <div>
+                <label>Время доставки:</label>
+                <input type="radio" name="delivery_type" value="now" id="now">
+                <label for="now" class="inline_label">Как можно скорее</label>
+                <input type="radio" name="delivery_type" value="by_time" id="by_time">
+                <label for="by_time" class="inline_label">К указаному времени</label>
+            </div>
+
+            <div>
+                <label for="time">Укажите время доставки</label>
+                <input type="time" name="time" id="time">
+            </div>
+
+            <label>Доступное время доставки с 7:00 до 23:00</label>
+
+            <div>
+                <button type="reset" class="other_btn">Сбросить</button>
+                <button type="submit" class="other_btn">Отправить</button>
+            </div>
+        </div>
+    </form>
+
+        </main>
+
+    </div>
+
+    <script src="products.js"></script>
+    <script src="display.js"></script>
+    <script src="order.js"></script>
 </body>
-
 </html>
