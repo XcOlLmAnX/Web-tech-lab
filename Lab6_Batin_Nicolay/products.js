@@ -1,0 +1,272 @@
+const products = [
+    {
+        keyword: 'fox_36_perfomance',
+        name: 'Fox 36 Perfomance Elite',
+        price: 36000,
+        category: 'fork',
+        count: '160 мм',
+        image: 'images/forks/fox_36_perfomance.png',
+        kind: 'short'
+    },
+    {
+        keyword: 'fox_34_performance',
+        name: 'Fox 34 Performance',
+        price: 42000,
+        category: 'fork',
+        count: '140 мм',
+        image: 'images/forks/fox_34_performance.png',
+        kind: 'short'
+    },
+    {
+        keyword: 'fox_36_factory',
+        name: 'Fox 36 Factory Kashima',
+        price: 49000,
+        category: 'fork',
+        count: '170 мм',
+        image: 'images/forks/fox_36_factory.png',
+        kind: 'medium'
+    },
+    {
+        keyword: 'fox_36_podium',
+        name: 'Fox 36 Podium Gold',
+        price: 110000,
+        category: 'fork',
+        count: '170 мм',
+        image: 'images/forks/fox_36_podium.png',
+        kind: 'medium'
+    },
+    {
+        keyword: 'fox_40_factory',
+        name: 'Fox 40 Factory Kashima',
+        price: 120000,
+        category: 'fork',
+        count: '200 мм',
+        image: 'images/forks/fox_40_factory.png',
+        kind: 'long'
+    },
+    {
+        keyword: 'fox_40_podium',
+        name: 'Fox 40 Podium Gold',
+        price: 210000,
+        category: 'fork',
+        count: '200 мм',
+        image: 'images/forks/fox_40_podium.png',
+        kind: 'long'
+    },
+    {
+        keyword: 'mavic_deemax',
+        name: 'Mavic Deemax Park',
+        price: 45000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/mavic_deemax.png',
+        kind: 'alu'
+    },
+    {
+        keyword: 'dt_swiss_ex1700',
+        name: 'DT Swiss EX 1700',
+        price: 68000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/dt_swiss_ex1700.png',
+        kind: 'alu'
+    },
+    {
+        keyword: 'dt_swiss_xm1700',
+        name: 'DT Swiss XM 1700',
+        price: 74000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/dt_swiss_xm1700.png',
+        kind: 'alu'
+    },
+    {
+        keyword: 'reserve_hd',
+        name: 'Reserve HD Carbon',
+        price: 145000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/reserve_hd.png',
+        kind: 'carbon'
+    },
+    {
+        keyword: 'reserve_30sl',
+        name: 'Santa Cruz Reserve 30 SL',
+        price: 132000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/reserve_30sl.png',
+        kind: 'carbon'
+    },
+    {
+        keyword: 'enve_m6',
+        name: 'ENVE M6 Carbon',
+        price: 189000,
+        category: 'wheels',
+        count: '29"',
+        image: 'images/wheels/enve_m6.png',
+        kind: 'carbon'
+    },
+    {
+        keyword: 'shimano_mt500',
+        name: 'Shimano MT500',
+        price: 18000,
+        category: 'brakes',
+        count: '2 поршня',
+        image: 'images/brakes/shimano_mt500.png',
+        kind: 'two_piston'
+    },
+    {
+        keyword: 'shimano_deore',
+        name: 'Shimano Deore M6100',
+        price: 9000,
+        category: 'brakes',
+        count: '2 поршня',
+        image: 'images/brakes/shimano_deore.png',
+        kind: 'two_piston'
+    },
+    {
+        keyword: 'sram_code_rsc',
+        name: 'SRAM Code RSC',
+        price: 32000,
+        category: 'brakes',
+        count: '4 поршня',
+        image: 'images/brakes/sram_code_rsc.png',
+        kind: 'four_piston'
+    },
+    {
+        keyword: 'magura_mt5',
+        name: 'Magura MT5',
+        price: 21000,
+        category: 'brakes',
+        count: '4 поршня',
+        image: 'images/brakes/magura_mt5.png',
+        kind: 'four_piston'
+    },
+    {
+        keyword: 'trp_spyre',
+        name: 'TRP Spyre',
+        price: 16000,
+        category: 'brakes',
+        count: 'Механические',
+        image: 'images/brakes/trp_spyre.png',
+        kind: 'mechanical'
+    },
+    {
+        keyword: 'avid_bb7',
+        name: 'Avid BB7',
+        price: 11000,
+        category: 'brakes',
+        count: 'Механические',
+        image: 'images/brakes/avid_bb7.png',
+        kind: 'mechanical'
+    },
+    {
+        keyword: 'maxxis_aspen',
+        name: 'Maxxis Aspen 29×2.25',
+        price: 4500,
+        category: 'tires',
+        count: '29×2.25',
+        image: 'images/tires/maxxis_aspen.png',
+        kind: 'xc'
+    },
+    {
+        keyword: 'maxxis_rekon',
+        name: 'Maxxis Rekon 29×2.4',
+        price: 5900,
+        category: 'tires',
+        count: '29×2.4',
+        image: 'images/tires/maxxis_rekon.png',
+        kind: 'trail'
+    },
+    {
+        keyword: 'maxxis_minion_dhf',
+        name: 'Maxxis Minion DHF 29×2.5',
+        price: 7200,
+        category: 'tires',
+        count: '29×2.5',
+        image: 'images/tires/maxxis_minion_dhf.png',
+        kind: 'dh'
+    },
+    {
+        keyword: 'schwalbe_magic_mary',
+        name: 'Schwalbe Magic Mary 29×2.4',
+        price: 7800,
+        category: 'tires',
+        count: '29×2.4',
+        image: 'images/tires/schwalbe_magic_mary.png',
+        kind: 'dh'
+    },
+    {
+        keyword: 'schwalbe_big_betty',
+        name: 'Schwalbe Big Betty 29×2.4',
+        price: 8200,
+        category: 'tires',
+        count: '29×2.4',
+        image: 'images/tires/schwalbe_big_betty.png',
+        kind: 'dh'
+    },
+    {
+        keyword: 'maxxis_high_roller_ii',
+        name: 'Maxxis High Roller II 29×2.5',
+        price: 6900,
+        category: 'tires',
+        count: '29×2.5',
+        image: 'images/tires/maxxis_high_roller_ii.png',
+        kind: 'dh'
+    },
+    {
+        keyword: 'fizik_antares',
+        name: 'Fizik Antares R5',
+        price: 12500,
+        category: 'saddles',
+        count: '130 мм',
+        image: 'images/saddles/fizik_antares.png',
+        kind: 'narrow'
+    },
+    {
+        keyword: 'selle_italia_slr',
+        name: 'Selle Italia SLR Boost',
+        price: 18900,
+        category: 'saddles',
+        count: '130 мм',
+        image: 'images/saddles/selle_italia_slr.png',
+        kind: 'narrow'
+    },
+    {
+        keyword: 'syncros_belcarra',
+        name: 'Syncros Belcarra 2.0',
+        price: 8900,
+        category: 'saddles',
+        count: '130 мм',
+        image: 'images/saddles/syncros_belcarra.png',
+        kind: 'narrow'
+    },
+    {
+        keyword: 'specialized_power',
+        name: 'Specialized Power Comp',
+        price: 11500,
+        category: 'saddles',
+        count: '143 мм',
+        image: 'images/saddles/specialized_power.png',
+        kind: 'medium'
+    },
+    {
+        keyword: 'ergon_sm_pro',
+        name: 'Ergon SM Pro',
+        price: 13900,
+        category: 'saddles',
+        count: '144 мм',
+        image: 'images/saddles/ergon_sm_pro.png',
+        kind: 'medium'
+    },
+    {
+        keyword: 'wtb_volt',
+        name: 'WTB Volt',
+        price: 6900,
+        category: 'saddles',
+        count: '155 мм',
+        image: 'images/saddles/wtb_volt.png',
+        kind: 'wide'
+    }
+];

@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+    padding: 50px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 40px;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 30px;
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.sidebar_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar_list li {
+    margin-bottom: 12px;
+}
+
+.sidebar_list a {
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar_list a:hover {
+    color: #ff7a00;
+}
+
+.category {
+    margin-bottom: 35px;
+}
+
+h1 {
+    margin-top: 50px;
+    scroll-margin-top: 30px;
+}
+
+.category h1 {
+    margin-top: 0;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 25px;
+}
+
+.filter_btn {
+    background-color: #ffffff;
+    border: 2px solid #d5d5d5;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filter_btn:hover {
+    border-color: #ff7a00;
+}
+
+.filter_btn.active {
+    background-color: #ff7a00;
+    border-color: #ff7a00;
+    color: #ffffff;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 23px;
+    width: 220px;
+    border: 2px solid transparent;
+}
+
+.card:hover, .card.selected {
+    border-color: #ff7a00;
+}
+
+.card_img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card_price {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.card_title {
+    font-size: 18px;
+    font-weight: normal;
+    min-height: 42px;
+    margin: 0 0 10px;
+}
+
+.card_count {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+.card_btn {
+    width: 100%;
+    background-color: #e6e6e4;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.card_btn:hover {
+    background-color: #d8d8d5;
+}
+
+.card_btn:active {
+    transform: scale(0.97);
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h4 {
+    font-size: 25px;
+    margin-top: 75px;
+}
+
+.order_container {
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.order_col {
+    flex: 1;
+    min-width: 0;
+}
+
+.order_item {
+    margin-bottom: 20px;
+}
+
+.order_text {
+    font-size: 20px;
+    margin: 5px 0 0;
+}
+
+#nothing_selected {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+label.inline_label {
+    display: inline;
+    font-weight: normal;
+}
+
+b {
+    font-size: 20px;
+}
+
+select, input[type="text"], input[type="email"], input[type="time"], textarea {
+    width: 70%;
+    padding: 13px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.other_btn {
+    width: 35%;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .catalog {
+        gap: 20px;
+    }
+
+    .card {
+        width: calc(50% - 10px);
+        max-width: 260px;
+    }
+
+    .order_container {
+        flex-direction: column;
+    }
+
+    .order_col {
+        max-width: 100%;
+    }
+
+    select, input[type="text"], input[type="email"], input[type="time"], textarea {
+        width: 100%;
+    }
+
+    .other_btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-top: 50px;
+    }
+
+    h4 {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+}
