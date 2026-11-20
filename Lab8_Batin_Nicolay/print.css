@@ -1,0 +1,36 @@
+.topnav, .checkout_panel, .sidebar, .filters, .card_btn, .combo_btn,.other_btn, select, input, textarea, .notification {
+    display: none;
+}
+
+body {
+    background-color: #fff;
+    padding: 0;
+    color: #000;
+}
+
+.layout {
+    display: block;
+    max-width: 100%;
+}
+
+.catalog {
+    flex-wrap: wrap;
+}
+
+.card,
+.card[hidden] {
+    display: block !important;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    break-inside: avoid;
+}
+
+.card_img {
+    max-width: 150px;
+    height: auto;
+}
+
+.order_container {
+    flex-direction: column;
+}

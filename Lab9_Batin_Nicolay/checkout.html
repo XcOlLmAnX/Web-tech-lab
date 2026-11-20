@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велошоп — оформление заказа</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+
+<body>
+    <header class="topnav">
+        <a href="index.html" class="topnav_logo">Велошоп</a>
+        <nav class="topnav_links">
+            <a href="index.html">Собрать комплект</a>
+            <a href="checkout.html" class="active">Оформить заказ</a>
+            <a href="orders.html">Заказы</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <section class="category">
+            <h1>Состав заказа</h1>
+
+            <p id="empty_message" class="empty_message" hidden>
+                Ничего не выбрано. Чтобы добавить товары в заказ, перейдите на страницу
+                <a href="index.html">Собрать комплект</a>.
+            </p>
+
+            <div class="catalog" id="order_catalog"></div>
+        </section>
+
+        <section>
+            <h1>Оформление заказа</h1>
+
+            <form class="order_container" id="order_form">
+                <div class="order_col">
+                    <h4>Ваш заказ</h4>
+
+                    <div class="order_item">
+                        <b>Комплект</b>
+                        <p id="combo_selected" class="order_text">Не выбран</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Вилка</b>
+                        <p id="fork_selected" class="order_text">Не выбрана</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Колёса</b>
+                        <p id="wheels_selected" class="order_text">Не выбраны</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Тормоза</b>
+                        <p id="brakes_selected" class="order_text">Не выбраны</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Покрышки</b>
+                        <p id="tires_selected" class="order_text">Не выбраны</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Седло</b>
+                        <p id="saddles_selected" class="order_text">Не выбрано</p>
+                    </div>
+
+                    <div class="order_item">
+                        <b>Стоимость заказа</b>
+                        <p id="order_total" class="order_text">0₽</p>
+                    </div>
+
+                    <label for="comment">Комментарий к заказу</label>
+                    <div>
+                        <textarea name="comment" id="comment"></textarea>
+                    </div>
+                </div>
+
+                <div class="order_col">
+                    <h4>Ваши данные</h4>
+
+                    <div>
+                        <label for="full_name">ФИО:</label>
+                        <input type="text" name="full_name" id="full_name" placeholder="Введите ФИО" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Ваш email:</label>
+                        <input type="email" name="email" id="email" placeholder="Введите email" required>
+                    </div>
+
+                    <div>
+                        <label for="subscribe">
+                            <input type="checkbox" name="subscribe" id="subscribe">
+                            Уведомлять о скидках и акциях
+                        </label>
+                    </div>
+
+                    <div>
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Введите номер телефона" required>
+                    </div>
+
+                    <div>
+                        <label for="delivery_address">Адрес доставки</label>
+                        <input type="text" name="delivery_address" id="delivery_address" placeholder="Введите адрес" required>
+                        <label>Доставка осуществляется только по Москве</label>
+                    </div>
+
+                    <div>
+                        <label>Время доставки:</label>
+                        <input type="radio" name="delivery_type" value="now" id="now" required checked>
+                        <label for="now" class="inline_label">Как можно скорее</label>
+                        <input type="radio" name="delivery_type" value="by_time" id="by_time">
+                        <label for="by_time" class="inline_label">К указанному времени</label>
+                    </div>
+
+                    <div>
+                        <label for="delivery_time">Укажите время доставки</label>
+                        <input type="time" name="delivery_time" id="delivery_time" min="07:00" max="23:00">
+                    </div>
+
+                    <label>Доступное время доставки с 7:00 до 23:00</label>
+
+                    <div>
+                        <button type="reset" class="other_btn">Сбросить</button>
+                        <button type="submit" class="other_btn" id="submit_btn">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

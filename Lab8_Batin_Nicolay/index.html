@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велошоп — каталог запчастей</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+
+<body>
+    <header class="topnav">
+        <a href="index.html" class="topnav_logo">Велошоп</a>
+        <nav class="topnav_links">
+            <a href="index.html" class="active">Собрать комплект</a>
+            <a href="checkout.html">Оформить заказ</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h3>Категории</h3>
+            <ul class="sidebar_list">
+                <li><a href="#combos">Комплекты</a></li>
+                <li><a href="#fork">Вилки</a></li>
+                <li><a href="#wheels">Колёса</a></li>
+                <li><a href="#brakes">Тормоза</a></li>
+                <li><a href="#tires">Покрышки</a></li>
+                <li><a href="#saddles">Сёдла</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+    <section class="combos">
+        <h1 id="combos">Доступные для заказа комплекты</h1>
+
+        <div class="combos_grid">
+            <div class="combo" data-combo="fork_wheels">
+                <div class="combo_items">
+                    <div class="combo_item">
+                        <img src="images/forks/fox_36_factory.png" alt="Вилка" class="combo_img">
+                        <p class="combo_caption">Вилка</p>
+                    </div>
+                    <div class="combo_item">
+                        <img src="images/wheels/dt_swiss_ex1700.png" alt="Колёса" class="combo_img">
+                        <p class="combo_caption">Колёса</p>
+                    </div>
+                </div>
+                <p class="combo_price">
+                    <span class="combo_old_price">от 81 000₽</span>
+                    от 72 900₽
+                </p>
+                <p class="combo_discount">Скидка 10%</p>
+                <button type="button" class="combo_btn">Добавить</button>
+            </div>
+
+            <div class="combo" data-combo="wheels_tires">
+                <div class="combo_items">
+                    <div class="combo_item">
+                        <img src="images/wheels/dt_swiss_ex1700.png" alt="Колёса" class="combo_img">
+                        <p class="combo_caption">Колёса</p>
+                    </div>
+                    <div class="combo_item">
+                        <img src="images/tires/maxxis_minion_dhf.png" alt="Покрышки" class="combo_img">
+                        <p class="combo_caption">Покрышки</p>
+                    </div>
+                </div>
+                <p class="combo_price">
+                    <span class="combo_old_price">от 49 500₽</span>
+                    от 44 550₽
+                </p>
+                <p class="combo_discount">Скидка 10%</p>
+                <button type="button" class="combo_btn">Добавить</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h1 id="fork">Вилки</h1>
+        <div class="filters" data-category="fork">
+            <button type="button" class="filter_btn" data-kind="short" title="Ход до 160 мм">Короткоходные</button>
+            <button type="button" class="filter_btn" data-kind="medium" title="Ход 161–180 мм">Среднеходные</button>
+            <button type="button" class="filter_btn" data-kind="long" title="Ход от 181 мм">Длинноходные</button>
+        </div>
+        <div class="catalog" id="fork_catalog"></div>
+    </section>
+
+    <section class="category">
+        <h1 id="wheels">Колёса</h1>
+        <div class="filters" data-category="wheels">
+            <button type="button" class="filter_btn" data-kind="alu">Алюминиевые</button>
+            <button type="button" class="filter_btn" data-kind="carbon">Карбоновые</button>
+        </div>
+        <div class="catalog" id="wheels_catalog"></div>
+    </section>
+
+    <section class="category">
+        <h1 id="brakes">Тормоза</h1>
+        <div class="filters" data-category="brakes">
+            <button type="button" class="filter_btn" data-kind="two_piston">2 поршня</button>
+            <button type="button" class="filter_btn" data-kind="four_piston">4 поршня</button>
+            <button type="button" class="filter_btn" data-kind="mechanical">Механические</button>
+        </div>
+        <div class="catalog" id="brakes_catalog"></div>
+    </section>
+
+    <section class="category">
+        <h1 id="tires">Покрышки</h1>
+        <div class="filters" data-category="tires">
+            <button type="button" class="filter_btn" data-kind="xc">Кросс-кантри</button>
+            <button type="button" class="filter_btn" data-kind="trail">Трейл</button>
+            <button type="button" class="filter_btn" data-kind="dh">Даунхилл</button>
+        </div>
+        <div class="catalog" id="tires_catalog"></div>
+    </section>
+
+    <section class="category">
+        <h1 id="saddles">Сёдла</h1>
+        <div class="filters" data-category="saddles">
+            <button type="button" class="filter_btn" data-kind="narrow" title="Ширина 130 мм">Узкие</button>
+            <button type="button" class="filter_btn" data-kind="medium" title="Ширина 143–144 мм">Средние</button>
+            <button type="button" class="filter_btn" data-kind="wide" title="Ширина 155 мм">Широкие</button>
+        </div>
+        <div class="catalog" id="saddles_catalog"></div>
+    </section>
+
+    <div class="checkout_panel" id="checkout_panel" hidden>
+        <div>
+            <p class="checkout_total">Стоимость заказа: <span id="panel_total">0₽</span></p>
+            <p class="checkout_hint" id="panel_hint"></p>
+        </div>
+        <a href="checkout.html" class="checkout_link" id="checkout_link">Перейти к оформлению</a>
+    </div>
+
+        </main>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="order.js"></script>
+    <script src="display.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>

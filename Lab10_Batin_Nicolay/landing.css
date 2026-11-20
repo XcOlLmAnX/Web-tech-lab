@@ -1,0 +1,23 @@
+body {
+    background-color: #f4f4f2;
+}
+
+.text-brand {
+    color: #ff7a00;
+}
+
+.btn-brand {
+    background-color: #ff7a00;
+    border-color: #ff7a00;
+    color: #ffffff;
+}
+
+.btn-brand:hover {
+    background-color: #e56d00;
+    border-color: #e56d00;
+    color: #ffffff;
+}
+
+.hero_img {
+    max-height: 350px;
+}

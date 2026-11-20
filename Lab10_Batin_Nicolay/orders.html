@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велошоп — мои заказы</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+
+<body>
+    <header class="topnav">
+        <a href="landing.html" class="topnav_logo">Велошоп</a>
+        <nav class="topnav_links">
+            <a href="landing.html">Главная</a>
+            <a href="index.html">Собрать комплект</a>
+            <a href="checkout.html">Оформить заказ</a>
+            <a href="orders.html" class="active">Заказы</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <h1>История заказов</h1>
+
+        <p id="orders_empty" class="empty_message" hidden>
+            У вас пока нет заказов. Чтобы сделать заказ, перейдите на страницу
+            <a href="index.html">Собрать комплект</a>.
+        </p>
+
+        <div class="orders_wrapper" id="orders_wrapper" hidden>
+            <table class="orders_table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Дата оформления</th>
+                        <th>Состав заказа</th>
+                        <th>Стоимость</th>
+                        <th>Время доставки</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="orders_list"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <dialog class="modal" id="view_modal">
+        <div class="modal_header">
+            <h3>Просмотр заказа</h3>
+            <button type="button" class="modal_close" data-close aria-label="Закрыть">&times;</button>
+        </div>
+        <div class="modal_body" id="view_body"></div>
+        <div class="modal_footer">
+            <button type="button" class="modal_btn modal_btn_main" data-close>Ок</button>
+        </div>
+    </dialog>
+
+    <dialog class="modal" id="edit_modal">
+        <form id="edit_form">
+            <div class="modal_header">
+                <h3>Редактирование заказа</h3>
+                <button type="button" class="modal_close" data-close aria-label="Закрыть">&times;</button>
+            </div>
+
+            <div class="modal_body">
+                <div class="modal_row">
+                    <span class="modal_label">Дата оформления</span>
+                    <span id="edit_date"></span>
+                </div>
+
+                <h4 class="modal_section">Доставка</h4>
+
+                <div class="modal_row">
+                    <label class="modal_label" for="edit_full_name">Имя получателя</label>
+                    <input type="text" id="edit_full_name" name="full_name" required>
+                </div>
+                <div class="modal_row">
+                    <label class="modal_label" for="edit_address">Адрес доставки</label>
+                    <input type="text" id="edit_address" name="delivery_address" required>
+                </div>
+                <div class="modal_row">
+                    <span class="modal_label">Тип доставки</span>
+                    <div>
+                        <label class="inline_label">
+                            <input type="radio" name="delivery_type" value="now" required> Как можно скорее
+                        </label>
+                        <label class="inline_label">
+                            <input type="radio" name="delivery_type" value="by_time"> Ко времени
+                        </label>
+                    </div>
+                </div>
+                <div class="modal_row">
+                    <label class="modal_label" for="edit_time">Время доставки</label>
+                    <input type="time" id="edit_time" name="delivery_time" min="07:00" max="23:00">
+                </div>
+                <div class="modal_row">
+                    <label class="modal_label" for="edit_phone">Телефон</label>
+                    <input type="tel" id="edit_phone" name="phone" required>
+                </div>
+                <div class="modal_row">
+                    <label class="modal_label" for="edit_email">Email</label>
+                    <input type="email" id="edit_email" name="email" required>
+                </div>
+
+                <h4 class="modal_section">Комментарий</h4>
+                <textarea id="edit_comment" name="comment"></textarea>
+
+                <h4 class="modal_section">Состав заказа</h4>
+                <div id="edit_items"></div>
+            </div>
+
+            <div class="modal_footer">
+                <button type="button" class="modal_btn" data-close>Отмена</button>
+                <button type="submit" class="modal_btn modal_btn_main">Сохранить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="modal modal_small" id="delete_modal">
+        <div class="modal_header">
+            <h3>Удаление заказа</h3>
+            <button type="button" class="modal_close" data-close aria-label="Закрыть">&times;</button>
+        </div>
+        <div class="modal_body">
+            <p>Вы уверены, что хотите удалить заказ?</p>
+        </div>
+        <div class="modal_footer">
+            <button type="button" class="modal_btn" data-close>Отмена</button>
+            <button type="button" class="modal_btn modal_btn_danger" id="delete_confirm">Да</button>
+        </div>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script src="common.js"></script>
+    <script src="orders.js"></script>
+</body>
+</html>
